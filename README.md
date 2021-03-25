@@ -61,3 +61,8 @@ O comando abaixo irá gerar no diretório /tmp um report com os dados diários.
 ```python
 python3 covid_report /tmp d 
 ```    
+
+#### Fonte
+Dados gerados a partir da API [covid19](https://api.covid19api.com/)
+
+Documentação disponível [aqui.](https://documenter.getpostman.com/view/10808728/SzS8rjbc)
