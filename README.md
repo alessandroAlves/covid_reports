@@ -58,8 +58,8 @@ Obs.: Os argumentos são posicionais e precisam estar nessa ordem.
 #### Exemplo
 
 O comando abaixo irá gerar no diretório /tmp um report com os dados diários.
-```python
-python3 covid_report /tmp d 
+```bash
+python3 covid_report.py /tmp d 
 ```    
 
 #### Fonte
