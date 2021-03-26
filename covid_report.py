@@ -19,7 +19,7 @@ def pull_covid_data(init_date):
 
 def load_raw_data(init_date, limit_date):
     """ 
-    Transform json response to df, filter month and rename columns
+    Transform json response to df and filter month
     """
     response = pull_covid_data(init_date)
     if response.status_code == 200:
@@ -28,7 +28,7 @@ def load_raw_data(init_date, limit_date):
         df = df.loc[mask]
         return df
     else:
-        raise(NameError(f"Nao foi poss[vel obter os dados. ERRO: {response}"))
+        raise(NameError(f"Nao foi possível obter os dados. ERRO: {response}"))
 
 
 def create_dayly_report(raw):
@@ -74,6 +74,7 @@ def create_weekly_report(raw):
     df["Deaths"] = df["Deaths_MAX"] - df["Deaths_MIN"]
     df["Recoverd"] = df["Recoverd_MAX"] - df["Recoverd_MIN"]
     df["Active"] = df["Active_MAX"] - df["Active_MIN"]
+    
     # Reorder cols
     df = df[[
         "Confirmed",
